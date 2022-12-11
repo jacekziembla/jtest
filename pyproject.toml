@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "jtest"
+version = "0.1.0"
+description = "Exemplary testing framework"
+authors = ["jacekz <redacted@redacted.redacted>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^7.2.0"
+webdriver-manager = "^3.8.5"
+selenium = "^4.7.2"
+requests = "^2.28.1"
+pytest-xdist = "^3.1.0"
+retry = "^0.9.2"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.15.8"
+mypy = "^0.991"
+flake8 = "^6.0.0"
+types-requests = "^2.28.11.5"
+pre-commit = "^2.20.0"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    ".", "src",
+]
+markers = [
+    "api: tests related to the api",
+    "ui: tests related to the ui",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
